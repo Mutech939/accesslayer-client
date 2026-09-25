@@ -31,6 +31,9 @@ import EmptyTransactionTimelineState from '@/components/common/EmptyTransactionT
 import TradeDialog, { type TradeSide } from '@/components/common/TradeDialog';
 import NetworkMismatchBanner from '@/components/common/NetworkMismatchBanner';
 import StellarConnectionQualityBadge from '@/components/common/StellarConnectionQualityBadge';
+import KeyAnalyticsPanel from '@/components/common/KeyAnalyticsPanel';
+import TimelockAdminPanel from '@/components/common/TimelockAdminPanel';
+import MultiKeyStakingVault from '@/components/common/MultiKeyStakingVault';
 import { useNetworkMismatch } from '@/hooks/useNetworkMismatch';
 import showToast from '@/utils/toast.util';
 import { getSignatureErrorMessage } from '@/utils/errorHandling.utils';
@@ -1178,6 +1181,10 @@ function LandingPage() {
 													)} shares available`
 										}
 									/>
+									<KeyAnalyticsPanel
+										creatorId={featuredCreator?.id ?? 'alex-rivers'}
+										className="mt-2"
+									/>
 									{isNetworkMismatch && <NetworkMismatchBanner />}
 									<div className="relative">
 										<div
@@ -1221,6 +1228,12 @@ function LandingPage() {
 							</MarketplaceSection>
 						)}
 					</SectionErrorBoundary>
+
+					<SectionDivider title="Staking Vault & Governance" spacing="relaxed" />
+
+					<MultiKeyStakingVault className="mt-6" />
+
+					<TimelockAdminPanel className="mt-6" />
 
 					<div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-slate-950/85 backdrop-blur-md md:hidden">
 						<div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-6 py-3">
