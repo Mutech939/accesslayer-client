@@ -103,4 +103,16 @@ describe('Key Management & Analytics Integration (#964, #966, #968)', () => {
 
 		expect(useStakingVaultStore.getState().position.sharesOwned).toBe(900);
 	});
+
+	it('renders and exercises CreatorKeyDashboard (#965)', async () => {
+		const { CreatorKeyDashboard } = await import('../CreatorKeyDashboard');
+		render(<CreatorKeyDashboard creatorAddress={adminWallet} />);
+
+		await waitFor(() => {
+			expect(screen.getByTestId('stat-holders')).toHaveTextContent('142');
+		});
+
+		expect(screen.getByTestId('stat-volume')).toHaveTextContent(/48,200\s+XLM/i);
+		expect(screen.getByTestId('stat-price')).toHaveTextContent(/12.5\s+XLM/i);
+	});
 });

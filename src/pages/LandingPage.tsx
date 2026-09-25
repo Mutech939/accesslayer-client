@@ -34,6 +34,7 @@ import StellarConnectionQualityBadge from '@/components/common/StellarConnection
 import KeyAnalyticsPanel from '@/components/common/KeyAnalyticsPanel';
 import TimelockAdminPanel from '@/components/common/TimelockAdminPanel';
 import MultiKeyStakingVault from '@/components/common/MultiKeyStakingVault';
+import { CreatorKeyDashboard } from '@/components/common/CreatorKeyDashboard';
 import { useNetworkMismatch } from '@/hooks/useNetworkMismatch';
 import showToast from '@/utils/toast.util';
 import { getSignatureErrorMessage } from '@/utils/errorHandling.utils';
@@ -1234,6 +1235,12 @@ function LandingPage() {
 					<MultiKeyStakingVault className="mt-6" />
 
 					<TimelockAdminPanel className="mt-6" />
+
+					<SectionDivider title="Creator Key Management" spacing="relaxed" />
+
+					<div className="mt-6">
+						<CreatorKeyDashboard />
+					</div>
 
 					<div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-slate-950/85 backdrop-blur-md md:hidden">
 						<div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-6 py-3">

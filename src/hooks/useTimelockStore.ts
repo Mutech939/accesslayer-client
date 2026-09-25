@@ -5,7 +5,8 @@ export type TimelockActionType =
 	| 'SET_TIMELOCK_DELAY'
 	| 'UPGRADE_CONTRACT'
 	| 'UPDATE_BONDING_CURVE'
-	| 'SET_EMERGENCY_GUARDIAN';
+	| 'SET_EMERGENCY_GUARDIAN'
+	| 'UPDATE_KEY_CONFIG';
 
 export type TimelockActionStatus = 'pending' | 'executed' | 'cancelled';
 
